@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    text-align: center;
+}
+
+.traffic-light {
+    width: 100px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.light {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 5px;
+    background: #ccc;
+}
+
+.red {
+    background: red;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.green {
+    background: green;
+}
+
+
+</style>
+
+
+<body>
+    <div class="traffic-light">
+        <div class="red light"></div>
+        <div class="yellow light"></div>
+        <div class="green light"></div>
+    </div>
+    <button onclick="changeLight()">Change Light</button>
+    <script >
+
+let currentLight = 'red';
+
+function changeLight() {
+    switch (currentLight) {
+        case 'red':
+            turnRed();
+            break;
+        case 'yellow':
+            turnYellow();
+            break;
+        case 'green':
+            turnGreen();
+            break;
+        default:
+            turnRed();
+    }
+}
+
+function turnRed() {
+    document.querySelector('.red').style.backgroundColor = 'red';
+    document.querySelector('.yellow').style.backgroundColor = '#ccc';
+    document.querySelector('.green').style.backgroundColor = '#ccc';
+    currentLight = 'red';
+}
+
+function turnYellow() {
+    document.querySelector('.red').style.backgroundColor = '#ccc';
+    document.querySelector('.yellow').style.backgroundColor = 'yellow';
+    document.querySelector('.green').style.backgroundColor = '#ccc';
+    currentLight = 'yellow';
+}
+
+function turnGreen() {
+    document.querySelector('.red').style.backgroundColor = '#ccc';
+    document.querySelector('.yellow').style.backgroundColor = '#ccc';
+    document.querySelector('.green').style.backgroundColor = 'green';
+    currentLight = 'green';
+}
+
+    </script>
+</body>
+</html>
